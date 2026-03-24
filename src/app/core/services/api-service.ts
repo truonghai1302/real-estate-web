@@ -25,18 +25,10 @@ export class ApiService {
   }
 
   get<T>(path: string): Observable<T> {
-    return this.http.get<T>(`${this.apiUrl}/${path}`, {
-      headers: {
-        Authorization: `Bearer ${this.token}`
-      }
-    });
+    return this.http.get<T>(`${this.apiUrl}/${path}`);
   }
 
   post<T>(path: string, body: any): Observable<T> {
-    return this.http.post<T>(`${this.apiUrl}/${path}`, body, {
-      headers: {
-        Authorization: `Bearer ${this.token}`
-      }
-    });
+    return this.http.post<T>(`${this.apiUrl}/${path}`, body,);
   }
 }
